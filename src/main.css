@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+@font-face {
+       font-family: gothic-bold;
+       src: url("./assets/fonts/GOTHICB.TTF");
+}
+
+@font-face {
+       font-family: gothic;
+       src: url("./assets/fonts/GOTHIC.TTF");
+}
+
+@font-face {
+       font-family: morabba-bold;
+       src: url("./assets/fonts/Morabba-Black.ttf");
+}
+
+@font-face {
+       font-family: morabba;
+       src: url("./assets/fonts/Morabba-Regular.ttf");
+}
+
+@font-face {
+       font-family: ghaf;
+       src: url("./assets/fonts/Digi-Ghaf-Bold.ttf");
+}
+
+
+@theme {
+       --breakpoint-xs: 20rem;
+       --color-primary: #FCCD2A;
+       --color-secondary: #347928;
+       --color-tertiary: #C0EBA6;
+       --color-quaternary: #f1f1f1;
+       --font-gothic-bold: "gothic-bold", sans-serif;
+       --font-gothic: "gothic", sans-serif;
+       --font-morabba: "morabba", sans-serif;
+       --font-morabba-bold: "morabba-bold", sans-serif;
+       --font-ghaf: "ghaf", sans-serif;
+}
+
+/* ----------------------CUSTOM STYLES---------------------------*/
+* {
+       word-spacing: 1px;
+}
+
+.ease-emphasized {
+       transition-timing-function: linear(0 0%, 0 1.8%, 0.01 3.6%, 0.03 6.35%, 0.07 9.1%, 0.13 11.4%, 0.19 13.4%, 0.27 15%, 0.34 16.1%, 0.54 18.35%, 0.66 20.6%, 0.72 22.4%, 0.77 24.6%, 0.81 27.3%, 0.85 30.4%, 0.88 35.1%, 0.92 40.6%, 0.94 47.2%, 0.96 55%, 0.98 64%, 0.99 74.4%, 1 86.4%, 1 100%);
+}
+
+.vibre-animate {
+       /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+       animation: vibre 200ms ease-in-out 100ms 1;
+       transition-property: opacity;
+       transition-delay: 100ms;
+       transition-duration: 100ms;
+       opacity: 0.7;
+}
+
+@keyframes vibre {
+       0% {
+              transform: translateX(20px);
+       }
+
+       55% {
+              transform: translateX(-10px);
+       }
+
+       100% {
+              transform: translateX(0px);
+       }
+}
+
+.scrollList li.selected {
+       opacity: 1;
+       font-weight: bold;
+       color: black;
+       scale: 1.3;
+}
+
+.td-id {
+       width: 15%;
+       border-top: 1px solid #a1a1a1;
+       border-bottom: 1px solid #a1a1a1;
+       border-left: 1px solid #a1a1a1;
+       text-align: center;
+       padding-block: 0.5rem;
+}
+
+.td-content {
+       width: 85%;
+       border-top: 1px solid #a1a1a1;
+       border-bottom: 1px solid #a1a1a1;
+       padding-inline: 0.5rem;
+}
+
+@keyframes fadeIn {
+       0% {
+              opacity: 0;
+              transform: scale(0.95)
+       }
+
+       100% {
+              opacity: 1;
+              transform: scale(1)
+       }
+}
+
+@keyframes fadeInBg {
+       0% {
+              opacity: 0;
+       }
+
+       100% {
+              opacity: 1;
+       }
+}
+
+.animate-fadeIn {
+       animation: fadeIn 0.25s ease-in-out
+}
+
+.animate-fadeInBg {
+       animation: fadeInBg 0.25s ease-in-out
+}
