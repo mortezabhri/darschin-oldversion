@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 @font-face {
        font-family: gothic-bold;
@@ -37,6 +38,7 @@
        --font-morabba: "morabba", sans-serif;
        --font-morabba-bold: "morabba-bold", sans-serif;
        --font-ghaf: "ghaf", sans-serif;
+       --breakpoint-xsl: 400px;
 }
 
 /* ----------------------CUSTOM STYLES---------------------------*/
@@ -183,7 +185,7 @@
        }
 }
 .animate-btnShoingModalFirst{
-       animation: btnShoingModalFirst 5s ease 3s forwards;
+       animation: btnShoingModalFirst 5s ease 2s forwards;
 }
 
 

@@ -31,7 +31,7 @@ export default function AskAnswer({ ask, answer }) {
                                    <p ref={height} style={{
                                           opacity: open ? 1 : 0,
                                           transform: (h1.current && h1.current.clientHeight > 60) && "translateY(5.5rem)"
-                                   }} className={`transition-all duration-300 opacity-0 ${(h1.current && h1.current.clientHeight > 60) ? "translate-y-0" : "translate-y-[4rem]"}`}>{answer}</p>
+                                   }} className={`transition-all duration-300 dark:text-white opacity-0 ${(h1.current && h1.current.clientHeight > 60) ? "translate-y-0" : "translate-y-[4rem]"}`}>{answer}</p>
                             </div>
                      </div>
               </>

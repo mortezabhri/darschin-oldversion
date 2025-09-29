@@ -165,17 +165,17 @@ const TimePicker = memo(({ callback, defaultStart, defaultEnd }) => {
                             <div className="w-full relative" ref={container}>
                                    {/* selectors */}
                                    <div className="w-full py-4 flex justify-center items-center px-6 gap-x-4 relative mb-10 mt-4" ref={selectors} dir="rtl">
-                                          <div className="w-full border border-neutral-300 px-6 py-3 rounded-xl cursor-pointer text-center text-2xl text-neutral-800 relative" onClick={() => fadeToggle(selectors, from, "flex")}>
-                                                 <h6 className="inline text-neutral-800 bg-white absolute right-2 -bottom-2 text-base !font-morabba">شروع</h6>
+                                          <div className="w-full border border-neutral-300 px-6 py-3 rounded-xl cursor-pointer text-center text-2xl text-neutral-800 dark:text-white relative" onClick={() => fadeToggle(selectors, from, "flex")}>
+                                                 <h6 className="inline bg-white dark:bg-neutral-700 absolute right-2 -bottom-2 text-base !font-morabba dark:text-white">شروع</h6>
                                                  <p ref={fromSelector} dir="ltr">{defaultStart}</p>
                                           </div>
-                                          <div className="w-full border border-neutral-300 px-6 py-3 rounded-xl cursor-pointer text-center text-2xl text-neutral-800 relative" onClick={() => fadeToggle(selectors, to, "flex")}>
-                                                 <h6 className="inline text-neutral-800 bg-white absolute right-2 -bottom-2 text-base font-morabba">پایان</h6>
+                                          <div className="w-full border border-neutral-300 px-6 py-3 rounded-xl cursor-pointer text-center text-2xl text-neutral-800 dark:text-white relative" onClick={() => fadeToggle(selectors, to, "flex")}>
+                                                 <h6 className="inline bg-white dark:bg-neutral-700 absolute right-2 -bottom-2 text-base font-morabba dark:text-white">پایان</h6>
                                                  <p ref={toSelector} dir="ltr">{defaultEnd}</p>
                                           </div>
 
 
-                                          <button className="w-9/10 font-morabba px-2 py-1 mx-12 text-sm border absolute -bottom-12 rounded-md text-center bg-green-200 cursor-pointer" onClick={ok}>
+                                          <button className="w-9/10 font-morabba px-2 py-1 mx-12 text-sm border absolute -bottom-12 rounded-md text-center bg-green-200 text-black dark:text-black cursor-pointer" onClick={ok}>
                                                  تایید تایم
                                           </button>
 
@@ -184,7 +184,7 @@ const TimePicker = memo(({ callback, defaultStart, defaultEnd }) => {
                                    {/* choose from */}
                                    <div className="w-full py-4 flex justify-center items-center px-6 gap-x-4 relative" style={{ display: "none" }} ref={from}>
                                           <div className="w-full h-16 border border-neutral-300 px-6 rounded-xl cursor-pointer text-center text-2xl text-neutral-800 relative">
-                                                 <h6 className="inline text-neutral-800 bg-white absolute right-2 -bottom-2 text-base font-morabba">ساعت</h6>
+                                                 <h6 className="inline text-neutral-800 bg-white dark:text-white dark:bg-neutral-700 absolute right-2 -bottom-2.5 px-1 text-base font-morabba">ساعت</h6>
                                                  <div className="w-full h-48 overflow-hidden -mt-19 py-22" onMouseOver={() => document.body.style.overflow = "hidden"} onMouseLeave={() => document.body.style.overflow = ""}>
                                                         <ul ref={fromHoursList} onWheel={(event) => scrollHandler(event, fromHoursList.current)} className={` ${styles.scrollList} scrollList flex flex-col gap-y-8`}></ul>
                                                  </div>
@@ -198,17 +198,19 @@ const TimePicker = memo(({ callback, defaultStart, defaultEnd }) => {
                                                         <ul ref={fromMinuteList} onWheel={(event) => scrollHandler(event, fromMinuteList.current)} className={` ${styles.scrollList} scrollList flex flex-col gap-y-8`}></ul>
                                                  </div>
                                           </div> */}
-                                          <button className="font-morabba w-[55%] px-2 py-1 mx-12 text-sm border absolute -bottom-22 right-0 rounded-md text-center bg-green-200 cursor-pointer" onClick={approvedFromTime}>
-                                                 تایید تایم شروع
-                                          </button>
-                                          <button className="font-morabba w-[20%] px-2 py-1 mx-12 text-sm border absolute -bottom-22 left-0 rounded-md text-center bg-red-200 cursor-pointer" onClick={() => fadeToggle(from, selectors, "flex")}>
-                                                 منصرف شدم
-                                          </button>
+                                          <div className="absolute -bottom-22 flex w-full gap-x-2 text-neutral-800" dir="rtl">
+                                                 <button className="font-morabba w-7/10 px-2 py-1 text-sm border rounded-md text-center bg-green-200 cursor-pointer" onClick={approvedFromTime}>
+                                                        تایید تایم شروع
+                                                 </button>
+                                                 <button className="font-morabba w-2/10 px-2 py-1 text-sm border rounded-md text-center bg-red-200 cursor-pointer" onClick={() => fadeToggle(from, selectors, "flex")}>
+                                                        منصرف شدم
+                                                 </button>
+                                          </div>
                                    </div>
                                    {/* choose to */}
                                    <div className="w-full py-4 flex justify-center items-center px-6 gap-x-4 " style={{ display: "none" }} ref={to}>
                                           <div className="w-full h-16 border border-neutral-300 px-6 rounded-xl cursor-pointer text-center text-2xl text-neutral-800 relative">
-                                                 <h6 className="inline text-neutral-800 bg-white absolute right-2 -bottom-2 text-base font-morabba">ساعت</h6>
+                                                 <h6 className="inline text-neutral-800 bg-white dark:text-white dark:bg-neutral-700 absolute right-2 -bottom-2 text-base font-morabba">ساعت</h6>
                                                  <div className="w-full h-48 overflow-hidden -mt-19 py-22" onMouseOver={() => document.body.style.overflow = "hidden"} onMouseLeave={() => document.body.style.overflow = ""}>
                                                         <ul ref={toHoursList} onWheel={(event) => scrollHandler(event, toHoursList.current)} className={` ${styles.scrollList} scrollList flex flex-col gap-y-8`}></ul>
                                                  </div>
@@ -222,12 +224,14 @@ const TimePicker = memo(({ callback, defaultStart, defaultEnd }) => {
                                                         <ul ref={toMinuteList} onWheel={(event) => scrollHandler(event, toMinuteList.current)} className={` ${styles.scrollList} scrollList flex flex-col gap-y-8`}></ul>
                                                  </div>
                                           </div> */}
-                                          <button className="font-morabba w-[55%] px-2 py-1 mx-12 text-sm border absolute -bottom-22 right-0 rounded-md text-center bg-green-200 cursor-pointer" onClick={approvedToTime}>
-                                                 تایید تایم پایان
-                                          </button>
-                                          <button className="font-morabba w-[20%] px-2 py-1 mx-12 text-sm border absolute -bottom-22 left-0 rounded-md text-center bg-red-200 cursor-pointer" onClick={() => fadeToggle(to, selectors, "flex")}>
-                                                 منصرف شدم
-                                          </button>
+                                          <div className="absolute -bottom-22 flex w-full gap-x-2 text-neutral-800" dir="rtl">
+                                                 <button className="font-morabba w-7/10 px-2 py-1 text-sm border rounded-md text-center bg-green-200 cursor-pointer" onClick={approvedToTime} >
+                                                        تایید تایم پایان
+                                                 </button>
+                                                 <button className="font-morabba w-2/10 px-2 py-1 text-sm border rounded-md text-center bg-red-200 cursor-pointer" onClick={() => fadeToggle(to, selectors, "flex")}>
+                                                        منصرف شدم
+                                                 </button>
+                                          </div>
                                    </div>
                             </div>
 

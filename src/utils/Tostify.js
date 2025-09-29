@@ -1,5 +1,6 @@
 //------FIRST : PASTE <ToastContainer /> IN JSX COMPONENT------------
 import { toast, Flip } from 'react-toastify';
+import { Get } from './Storage';
 
 export const notifyError = (msg) => toast.error(msg, {
        position: "top-right",
@@ -9,7 +10,7 @@ export const notifyError = (msg) => toast.error(msg, {
        pauseOnHover: false,
        draggable: true,
        progress: undefined,
-       theme: "light",
+       theme: Get("them") ?? 'light',
        transition: Flip,
        pauseOnFocusLoss : false,
        className : "!font-morabba border border-neutral-300"
@@ -22,7 +23,7 @@ export const notifySuccess = (msg) => toast.success(msg, {
        pauseOnHover: false,
        draggable: true,
        progress: undefined,
-       theme: "light",
+       theme: Get("them") ?? 'light',
        transition: Flip,
        pauseOnFocusLoss : false,
        className : "!font-morabba border border-neutral-300"

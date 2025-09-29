@@ -1,7 +1,7 @@
 import { createPortal } from "react-dom";
 import { memo } from "react";
 
-const Modal = ({ isOpen, onClose, children , closeBtn = true }) => {
+const Modal = ({ isOpen, onClose, children, closeBtn = true }) => {
 
 
        if (!isOpen) return null;
@@ -12,7 +12,7 @@ const Modal = ({ isOpen, onClose, children , closeBtn = true }) => {
                      onClick={onClose}
               >
                      <div
-                            className="bg-white rounded-2xl shadow-lg p-6 max-h-[90vh] w-9/10 max-w-lg relative animate-fadeIn"
+                            className="bg-white dark:bg-neutral-700 text-black dark:text-white rounded-2xl shadow-lg p-6 max-h-[90vh] w-9/10 max-w-lg relative animate-fadeIn"
                             onClick={(e) => e.stopPropagation()}
                      >
                             <button

@@ -105,11 +105,11 @@ export default function Table({ day, updater }) {
                                    آیا از حذف این تایم اطمینان دارید؟
                             </h1>
                             <div className="py-4 flex justify-center gap-x-2">
-                                   <button className="w-3/10 p-2 bg-red-300 rounded-xl font-morabba cursor-pointer" onClick={() => setShowDeleteModal(prev => !prev)}>منصرف شدم</button>
+                                   <button className="w-3/10 p-2 bg-red-300 dark:text-black rounded-xl font-morabba cursor-pointer" onClick={() => setShowDeleteModal(prev => !prev)}>منصرف شدم</button>
                                    <button onClick={() => {
                                           deletePlan(deleteID);
                                           setShowDeleteModal(prev => !prev);
-                                   }} className="cursor-pointer w-7/10 p-2 bg-green-300 rounded-xl font-morabba">آره ، حذفش کن</button>
+                                   }} className="cursor-pointer w-7/10 p-2 bg-green-300 rounded-xl font-morabba dark:text-black">آره ، حذفش کن</button>
                             </div>
                      </Modal>
                      {/* DESCRIPTION MODAL */}
@@ -121,16 +121,16 @@ export default function Table({ day, updater }) {
                      {/* CONTENT */}
                      <div className="w-full overflow-hidden relative">
                             {/* today */}
-                            <h1 className="w-full border border-b-0 border-neutral-400 rounded-t-2xl py-3 text-center text-2xl font-morabba-bold bg-neutral-200">
+                            <h1 className="w-full border border-b-0 border-neutral-400 rounded-t-2xl py-3 text-center text-2xl font-morabba-bold bg-neutral-300 dark:bg-secondary dark:border-neutral-500 dark:text-white">
                                    {daysOfWeek[Number(day)]}
                             </h1>
                             {/* plans */}
                             <div className="w-full flex" dir="rtl">
                                    {/* times */}
-                                   <div className="w-1/6 border border-t-0 border-neutral-400">
+                                   <div className="w-1/6 border border-t-0 border-neutral-400 dark:border-neutral-500">
                                           {
                                                  settings.counter.map(item => (
-                                                        <div key={Math.random() * 10000} className="h-12 border-t border-neutral-400 flex justify-center items-center font-gothic">
+                                                        <div key={Math.random() * 10000} className="h-12 border-t border-neutral-400 flex justify-center items-center font-gothic dark:text-white">
                                                                {item}
                                                         </div>
                                                  ))
@@ -147,7 +147,7 @@ export default function Table({ day, updater }) {
                                                                              style={{
                                                                                     height: (plan.hours * 3) + "rem"
                                                                              }}
-                                                                             className={`${plan.lesson && "bg-green-100"} relative border border-t-0 border-r-0 border-neutral-400 flex justify-center items-center `}
+                                                                             className={`${plan.lesson && "bg-green-100 dark:bg-neutral-500"} dark:text-white relative border border-t-0 border-r-0 border-neutral-400 dark:border-neutral-500 dark:border-b-neutral-600 flex justify-center items-center `}
                                                                       >
                                                                              {plan.lesson && (
                                                                                     <>

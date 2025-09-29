@@ -5,13 +5,14 @@ import { SettingsProvider } from "./contexts/Settings";
 import { ToastContainer } from "react-toastify";
 import { Get } from "./utils/Storage";
 import { useNavigate } from "react-router-dom"
+import { useEffect } from "react";
+// import ChangeMod from "./components/ChangeMod";
 
 //PAGES
 import Home from "./pages/Home";
 import TotalPlans from "./pages/TotalPlans";
 import FAQ from "./pages/FAQ";
 import Welcome from "./pages/welcome";
-import { useEffect } from "react";
 
 function App() {
 
@@ -26,9 +27,10 @@ function App() {
 
        return (
               <SettingsProvider>
-                     <section className="min-w-xs max-w-lg mx-auto select-none bg-quaternary min-h-screen relative overflow-x-hidden">
-                            <ToastContainer rtl style={{zIndex : 9999999}}/>
+                     <section className="min-w-xs max-w-lg mx-auto select-none bg-quaternary dark:bg-neutral-700 transition-all min-h-screen relative overflow-x-hidden">
+                            <ToastContainer rtl style={{ zIndex: 9999999 }} />
                             <Sidebar rerendering={forceUpdate} />
+                            {/* <ChangeMod /> */}
                             <Routes>
                                    <Route path="/" element={<Home />} />
                                    <Route path="/plans" element={<TotalPlans />} />
