@@ -1,12 +1,12 @@
 export default function (arr) {
-       let randomNum;
+     let randomNum;
 
-       // استخراج همه id های موجود در آرایه
-       const existingIds = arr.map(item => item.id);
+     // استخراج همه id های موجود در آرایه
+     const existingIds = arr ? arr.map(item => item.id) : [];
 
-       do {
-              randomNum = Math.floor(Math.random() * 10000);
-       } while (existingIds.includes(randomNum));
+     do {
+          randomNum = Math.floor(Math.random() * 10000);
+     } while (existingIds.includes(randomNum));
 
-       return randomNum;
+     return randomNum;
 }
